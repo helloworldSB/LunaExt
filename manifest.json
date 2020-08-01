@@ -1,14 +1,31 @@
 {
-    "name": "Luna For MCBBS",
-    "version": "0.9.1.0",
-    "description": "Powerful client extension for MCBBS!",
-    "manifest_version": 2,
-    "browser_action": {
-        "default_popup": "popup.html"
+  "name": "Luna For MCBBS",
+  "version": "0.9.1.0",
+  "description": "Powerful client extension for MCBBS!",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "img/ic_logo_16.png",
+    "48": "img/ic_logo_48.png",
+    "128": "img/ic_logo_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.mcbbs.net/forum.php?mod=post&action=newthread&fid=*"
+      ],
+      "js": ["js/btnedit.js"]
     },
-    "icons": {
-        "16": "img/ic_logo_16.png",
-        "48": "img/ic_logo_48.png",
-        "128": "img/ic_logo_128.png"
+    {
+      "matches": ["https://www.mcbbs.net/*"],
+      "js": ["js/jquery-3.5.1.min.js", "js/addlogo.js", "js/showinfo.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://www.mcbbs.net/*"],
+      "js": ["js/addlogo.js", "js/showinfo.js"]
     }
+  ]
 }

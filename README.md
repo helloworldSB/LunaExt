@@ -4,6 +4,8 @@
 
 使用为 MCBBS 设计的 Chrome 扩（wai）展（gua），获得一些针对 MCBBS 的辅助功能。
 
+目前大部分功能尚未实现！！！
+
 ## 功能列表
 
 ### FreeType
